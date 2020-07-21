@@ -1,0 +1,26 @@
+{%extends 'layout.template.html' %} {%block content%}
+<h2>Add</h2>
+<form method="POST">
+  <div class="form-group">
+    <label>Image Title</label>
+    <input type="text" class="form-control" name="image_name" />
+  </div>
+
+  <div class="form-group">
+    <label>Name of Photographer</label>
+    <input type="text" class="form-control" name="photographer_name" />
+  </div>
+
+  <div class="form-group">
+    <label>Location</label>
+    <input type="text" class="form-control" name="image_location" />
+  </div>
+
+  <div class="form-group">
+    <label>Year</label>
+    <input type="text" class="form-control" name="image_year" />
+  </div>
+
+  <input type="submit" class="btn btn-primary" />
+</form>
+{%endblock%}
