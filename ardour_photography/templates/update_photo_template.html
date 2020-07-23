@@ -1,5 +1,5 @@
 {%extends 'layout.template.html' %} {%block content%}
-<h2>Update</h2>
+<h2>Edit</h2>
 <form method="POST">
   <div class="form-group">
     <label>Image Title</label>
@@ -27,7 +27,7 @@
 
 <div class="form-group">
     <label for="exampleFormControlTextarea1">Photograph Description</label>
-    <textarea class="form-control" rows="3" name="photograph_description" placeholder="{{photo.description}}"></textarea>
+    <textarea class="form-control" rows="3" name="photograph_description" >{{photo.description}}</textarea>
 </div>
 
  <div class="row">

@@ -52,15 +52,50 @@ def process_create_photo():
         "iso": iso
     })
 
-    return "New Photograph Saved"
+    return redirect(url_for('show_all_photos'))
 
 @app.route('/photo/update/<id>')
 def update_photo(id):
     photo = client[DB_NAME].photo.find_one({
-        "_id": ObjectId("5f18fc201e78f9cbb019f3ae")
+        "_id": ObjectId(id)
     })
 
     return render_template("update_photo_template.html", photo=photo)
+
+
+@app.route('/photo/update/<id>', methods=["POST"])
+def process_update_photo(id):
+    image_name = request.form.get('image_name')
+    photographer_name = request.form.get('photographer_name')
+    image_location = request.form.get('image_location')
+    image_year = request.form.get('image_year')
+    photograph_description = request.form.get('photograph_description')
+    camera_make = request.form.get('camera_make')
+    camera_model = request.form.get('camera_model')
+    focal_length = request.form.get('focal_length')
+    aperture = request.form.get('aperture')
+    shutter_speed = request.form.get('shutter_speed')
+    iso = request.form.get('iso')
+
+    client[DB_NAME].photo.update_one({
+        "_id": ObjectId(id)
+    }, {
+        "$set": {
+            "title": image_name,
+            "photographer": photographer_name,
+            "location": image_location,
+            "year": image_year,
+            "description": photograph_description,
+            "cameraMake": camera_make,
+            "cameraModel": camera_model,
+            "focalLength": focal_length,
+            "aperture": aperture,
+            "shutterSpeed": shutter_speed,
+            "iso": iso
+        }
+    })
+
+    return redirect(url_for('show_all_photos'))
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
