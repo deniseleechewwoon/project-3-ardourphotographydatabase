@@ -1,0 +1,40 @@
+{%extends 'layout.template.html' %}
+{%block content%}
+
+<table class="table">
+    <tbody>
+        {%for photo in all_photos %}
+            <tr>
+                <td>
+                    <div class="container">
+                        <div>
+                        <h2>{{photo.title}}, {{photo.year}}</h2>
+                        <p>by {{photo.photographer}} @ {{photo.location}}</p>
+                        <p>{{photo.description}}</p>
+                        </div>
+
+                        <div class="row">
+                        <div class="col-3"><h6>Camera Make</h6>{{photo.cameraMake}}</div>
+                        <div class="col-3"><h6>Camera Model</h6>{{photo.cameraModel}}</div>
+                        <div class="col-4"></div>
+                        </div>
+
+                        <div class="row mt-2">
+                        <div class="col-3"><h6>Focal Length</h6>{{photo.focalLength}}</div>
+                        <div class="col-3"><h6>Aperture</h6>{{photo.aperture}}</div>
+                        <div class="col-4"></div>
+                        </div>
+
+                        <div class="row mt-2">
+                        <div class="col-3"><h6>Shutter Speed</h6>{{photo.shutterSpeed}}</div>
+                        <div class="col-3"><h6>ISO</h6>{{photo.iso}}</div>
+                        <div class="col-4"></div>
+                        </div>
+                        
+                    </div>
+                </td>
+            </tr>
+        {%endfor%}
+    </tbody>
+</table>
+{%endblock%}
