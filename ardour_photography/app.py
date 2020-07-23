@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
+from bson.objectid import ObjectId
 from dotenv import load_dotenv
 import pymongo
 
@@ -52,6 +53,14 @@ def process_create_photo():
     })
 
     return "New Photograph Saved"
+
+@app.route('/photo/update/<id>')
+def update_photo(id):
+    photo = client[DB_NAME].photo.find_one({
+        "_id": ObjectId("5f18fc201e78f9cbb019f3ae")
+    })
+
+    return render_template("update_photo_template.html", photo=photo)
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
