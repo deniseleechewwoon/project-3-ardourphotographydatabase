@@ -21,12 +21,36 @@ def show_all_photos():
     search_terms = request.args.get('search-terms')
 
     criteria = {}
-    
+
     if search_terms != "" and search_terms is not None:
         criteria['title'] = {
             "$regex": search_terms,
             "$options":"i"
         }
+
+    search_type = request.args.get('type_wedding')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Wedding Photography"
+
+    search_type = request.args.get('type_event')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Event Photography"
+
+    search_type = request.args.get('type_portrait')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Portrait Photography"
+
+    search_type = request.args.get('type_product')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Product Photography"
+
+    search_type = request.args.get('type_fineart')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Fine Art Photography"
+
+    
+
+    
 
     all_photos = client[DB_NAME].photo.find(criteria)
     return render_template('show_photos.template.html', all_photos=all_photos)

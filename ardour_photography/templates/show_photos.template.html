@@ -1,11 +1,24 @@
 {%extends 'layout.template.html' %}
 {%block content%}
 
-<h1>Gallery</h1>
+<h1>Gallery<a class="btn btn-primary ml-3" href="{{ url_for('create_photo')}}" role="button">Add</a></h1>
+
+
 
 <form class="form-inline mb-3" method="GET">
-    <input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control"/>
-    <input type="submit" value="Search" class="ml-3 form-control btn-dark"/>
+    <div>
+        <input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control"/>
+        <input type="submit" value="Search" class="ml-3 form-control btn-dark"/>
+    </div>
+
+    <div class="container mt-2">
+        <input type="checkbox" name="type_wedding" class="form-check-input ml-3"/>Wedding Photography
+        <input type="checkbox" name="type_event" class="form-check-input ml-3"/>Event Photography
+        <input type="checkbox" name="type_portrait" class="form-check-input ml-3"/>Portrait Photography
+        <input type="checkbox" name="type_product" class="form-check-input ml-3"/>Product Photography
+        <input type="checkbox" name="type_fineart" class="form-check-input ml-3"/>Fine Art Photography
+    <div>
+
 </form>
 
 <table class="table">
