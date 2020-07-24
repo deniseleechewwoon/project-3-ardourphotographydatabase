@@ -15,15 +15,28 @@ DB_NAME = "ardour_photography"
 
 client = pymongo.MongoClient(MONGO_URI)
 
+
 @app.route('/photos')
 def show_all_photos():
-    all_photos = client[DB_NAME].photo.find()
+    search_terms = request.args.get('search-terms')
+
+    criteria = {}
+    
+    if search_terms != "" and search_terms is not None:
+        criteria['title'] = {
+            "$regex": search_terms,
+            "$options":"i"
+        }
+
+    all_photos = client[DB_NAME].photo.find(criteria)
     return render_template('show_photos.template.html', all_photos=all_photos)
+
 
 @app.route('/photo/create')
 def create_photo():
     all_photography_types = client[DB_NAME].photography_types.find()
     return render_template('create_photo.template.html', all_photography_types=all_photography_types)
+
 
 @app.route('/photo/create', methods=["POST"])
 def process_create_photo():
@@ -64,6 +77,7 @@ def process_create_photo():
 
     return redirect(url_for('show_all_photos'))
 
+
 @app.route('/photo/update/<id>')
 def update_photo(id):
     photo = client[DB_NAME].photo.find_one({
@@ -103,8 +117,8 @@ def process_update_photo(id):
             "location": image_location,
             "year": image_year,
             "type": {
-            "_id": photography_type_object["_id"],
-            "name": photography_type_object["type_name"]
+                "_id": photography_type_object["_id"],
+                "name": photography_type_object["type_name"]
             },
             "description": photograph_description,
             "cameraMake": camera_make,
@@ -118,21 +132,24 @@ def process_update_photo(id):
 
     return redirect(url_for('show_all_photos'))
 
+
 @app.route('/photo/delete/<id>')
 def delete_photo(id):
     photo = client[DB_NAME].photo.find_one({
-        "_id":ObjectId(id)
+        "_id": ObjectId(id)
     })
 
     return render_template('confirm_delete_photo.template.html', photo=photo)
 
+
 @app.route('/photo/delete/<id>', methods=["POST"])
 def process_delete_photo(id):
     client[DB_NAME].photo.remove({
-        "_id":ObjectId(id)
+        "_id": ObjectId(id)
     })
 
     return redirect(url_for('show_all_photos'))
+
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':

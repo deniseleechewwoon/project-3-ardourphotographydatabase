@@ -1,6 +1,13 @@
 {%extends 'layout.template.html' %}
 {%block content%}
 
+<h1>Gallery</h1>
+
+<form class="form-inline mb-3" method="GET">
+    <input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control"/>
+    <input type="submit" value="Search" class="ml-3 form-control btn-dark"/>
+</form>
+
 <table class="table">
     <tbody>
         {%for photo in all_photos %}
@@ -8,8 +15,8 @@
                 <td>
                     <div class="container">
                         <div>
-                        <h2>{{photo.title}}, {{photo.year}}</h2>
-                        <p>by {{photo.photographer}} @ {{photo.location}}, {{photo.type.name}}</p>
+                        <h2>{{photo.title}}, {{photo.type.name}}</h2>
+                        <p>by <i>{{photo.photographer}}</i> @ {{photo.location}} on {{photo.year}}</p>
                         <p>{{photo.description}}</p>
                         </div>
 
