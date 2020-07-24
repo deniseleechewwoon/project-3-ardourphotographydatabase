@@ -9,7 +9,7 @@
                     <div class="container">
                         <div>
                         <h2>{{photo.title}}, {{photo.year}}</h2>
-                        <p>by {{photo.photographer}} @ {{photo.location}}</p>
+                        <p>by {{photo.photographer}} @ {{photo.location}}, {{photo.type.name}}</p>
                         <p>{{photo.description}}</p>
                         </div>
 
@@ -22,7 +22,7 @@
                         <div class="row mt-2">
                         <div class="col-3"><h6>Focal Length</h6>{{photo.focalLength}}</div>
                         <div class="col-3"><h6>Aperture</h6>{{photo.aperture}}</div>
-                        <div class="col-4"></div>
+                        <div class="col-4"><a class="btn btn-danger" href="{{ url_for('delete_photo', id=photo._id)}}" role="button">Delete</a></div>
                         </div>
 
                         <div class="row mt-2">

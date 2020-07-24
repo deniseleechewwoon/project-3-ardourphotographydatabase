@@ -1,0 +1,14 @@
+{%extends 'layout.template.html' %}
+{%block content%}
+
+<div class="alert alert-danger">
+    <form method="POST">
+        Are you sure you want to delete Photo Entry: {{photo.title}}?
+        <div>
+        <input class="btn btn-danger" type="submit" value="Confirm"/>
+        <a class="btn btn-primary" href="{{url_for('show_all_photos')}}">Cancel</a>
+        </div>
+    </form>
+</div>
+
+{%endblock%}

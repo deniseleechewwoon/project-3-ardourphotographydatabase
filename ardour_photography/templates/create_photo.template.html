@@ -26,6 +26,15 @@
 </div>
 
 <div class="form-group">
+    <label>Photography Type</label>
+    <select class="form-control" name="photography_type">
+        {%for type in all_photography_types %}
+        <option value="{{type._id}}">{{type.type_name}}</option>
+        {%endfor%}
+    </select>
+</div>
+
+<div class="form-group">
     <label for="exampleFormControlTextarea1">Photograph Description</label>
     <textarea class="form-control" rows="3" name="photograph_description"></textarea>
 </div>

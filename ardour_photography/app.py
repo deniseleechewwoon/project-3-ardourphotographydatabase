@@ -22,7 +22,8 @@ def show_all_photos():
 
 @app.route('/photo/create')
 def create_photo():
-    return render_template('create_photo.template.html')
+    all_photography_types = client[DB_NAME].photography_types.find()
+    return render_template('create_photo.template.html', all_photography_types=all_photography_types)
 
 @app.route('/photo/create', methods=["POST"])
 def process_create_photo():
@@ -30,6 +31,7 @@ def process_create_photo():
     photographer_name = request.form.get('photographer_name')
     image_location = request.form.get('image_location')
     image_year = request.form.get('image_year')
+    photography_type = request.form.get('photography_type')
     photograph_description = request.form.get('photograph_description')
     camera_make = request.form.get('camera_make')
     camera_model = request.form.get('camera_model')
@@ -38,11 +40,19 @@ def process_create_photo():
     shutter_speed = request.form.get('shutter_speed')
     iso = request.form.get('iso')
 
+    photography_type_object = client[DB_NAME].photography_types.find_one({
+        "_id": ObjectId(photography_type)
+    })
+
     client[DB_NAME].photo.insert_one({
         "title": image_name,
         "photographer": photographer_name,
         "location": image_location,
         "year": image_year,
+        "type": {
+            "_id": photography_type_object["_id"],
+            "name": photography_type_object["type_name"]
+        },
         "description": photograph_description,
         "cameraMake": camera_make,
         "cameraModel": camera_model,
@@ -60,7 +70,9 @@ def update_photo(id):
         "_id": ObjectId(id)
     })
 
-    return render_template("update_photo_template.html", photo=photo)
+    all_photography_types = client[DB_NAME].photography_types.find()
+
+    return render_template("update_photo_template.html", photo=photo, all_photography_types=all_photography_types)
 
 
 @app.route('/photo/update/<id>', methods=["POST"])
@@ -69,6 +81,7 @@ def process_update_photo(id):
     photographer_name = request.form.get('photographer_name')
     image_location = request.form.get('image_location')
     image_year = request.form.get('image_year')
+    photography_type = request.form.get('photography_type')
     photograph_description = request.form.get('photograph_description')
     camera_make = request.form.get('camera_make')
     camera_model = request.form.get('camera_model')
@@ -76,6 +89,10 @@ def process_update_photo(id):
     aperture = request.form.get('aperture')
     shutter_speed = request.form.get('shutter_speed')
     iso = request.form.get('iso')
+
+    photography_type_object = client[DB_NAME].photography_types.find_one({
+        "_id": ObjectId(photography_type)
+    })
 
     client[DB_NAME].photo.update_one({
         "_id": ObjectId(id)
@@ -85,6 +102,10 @@ def process_update_photo(id):
             "photographer": photographer_name,
             "location": image_location,
             "year": image_year,
+            "type": {
+            "_id": photography_type_object["_id"],
+            "name": photography_type_object["type_name"]
+            },
             "description": photograph_description,
             "cameraMake": camera_make,
             "cameraModel": camera_model,
@@ -93,6 +114,22 @@ def process_update_photo(id):
             "shutterSpeed": shutter_speed,
             "iso": iso
         }
+    })
+
+    return redirect(url_for('show_all_photos'))
+
+@app.route('/photo/delete/<id>')
+def delete_photo(id):
+    photo = client[DB_NAME].photo.find_one({
+        "_id":ObjectId(id)
+    })
+
+    return render_template('confirm_delete_photo.template.html', photo=photo)
+
+@app.route('/photo/delete/<id>', methods=["POST"])
+def process_delete_photo(id):
+    client[DB_NAME].photo.remove({
+        "_id":ObjectId(id)
     })
 
     return redirect(url_for('show_all_photos'))
