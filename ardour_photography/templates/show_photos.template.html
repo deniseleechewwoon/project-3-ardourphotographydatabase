@@ -26,9 +26,17 @@
         {%for photo in all_photos %}
             <tr>
                 <td>
-                    <div class="container">
+
+                <div class="row">
+                    <div class="col media">
+                    <img src="/static/img/home-photo.jpg" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
+                    </div>
+
+                    <div class="col align-self-center align-items-cente">
+      
+    
                         <div>
-                        <h2>{{photo.title}}, {{photo.type.name}}</h2>
+                        <h3>{{photo.title}}, {{photo.type.name}}</h3>
                         <p>by <i>{{photo.photographer}}</i> @ {{photo.location}} on {{photo.year}}</p>
                         <p>{{photo.description}}</p>
                         </div>
@@ -52,6 +60,7 @@
                         </div>
                         
                     </div>
+                </div>
                 </td>
             </tr>
         {%endfor%}
