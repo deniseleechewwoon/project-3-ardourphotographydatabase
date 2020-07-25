@@ -1,0 +1,24 @@
+.masthead {
+    height: 95vh;
+	min-height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Lato', sans-serif;
+}
+
+.animate-custom {
+	position: relative;
+	animation: mymove 1.2s;
+}
+
+@keyframes mymove {
+	from {top: -800px;}
+	to {top: 0;}
+
+}
+
+.center-logo {
+  display: flex;
+  align-items: center;
+}

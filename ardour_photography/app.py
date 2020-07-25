@@ -15,6 +15,9 @@ DB_NAME = "ardour_photography"
 
 client = pymongo.MongoClient(MONGO_URI)
 
+@app.route('/')
+def index():
+    return render_template('index.template.html')
 
 @app.route('/photos')
 def show_all_photos():
@@ -47,10 +50,6 @@ def show_all_photos():
     search_type = request.args.get('type_fineart')
     if search_type is not None and search_type is not False:
         criteria['type.name'] = "Fine Art Photography"
-
-    
-
-    
 
     all_photos = client[DB_NAME].photo.find(criteria)
     return render_template('show_photos.template.html', all_photos=all_photos)
