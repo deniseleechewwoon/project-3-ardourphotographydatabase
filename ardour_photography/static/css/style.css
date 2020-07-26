@@ -19,6 +19,20 @@
     background-color: #f6eacb;
 }
 
+.btn-custom2 {
+    font-family: 'Cormorant Upright', serif;
+    font-size: 18px;
+    color: #f6eacb;
+    background-color: #574013 ;
+}
+
+.btn-custom3 {
+    font-family: 'Cormorant Upright', serif;
+    font-size: 18px;
+    color: #f6eacb;
+    background-color: #f41f4e;
+}
+
 body {
   background-color: #e6e2d9;
 }
@@ -83,4 +97,37 @@ h6{
     font-family: 'Lato', sans-serif;
     font-size: 16px;
     color:  #574013;
+}
+
+h5{
+    font-family: 'Cormorant Upright', serif;
+    font-size: 24px;
+    color:  #574013;
+}
+
+.form-label{
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color:  #574013;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  border: none;
+  outline: none;
+  background-color:#f41f4e;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
 }

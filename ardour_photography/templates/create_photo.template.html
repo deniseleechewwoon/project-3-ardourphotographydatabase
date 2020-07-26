@@ -1,30 +1,54 @@
-{%extends 'layout.template.html' %} {%block content%}
-<h2>Add</h2>
+{%extends 'layout.template.html' %} 
+{%block content%}
+<nav class="navbar navbar-expand-lg">
+	<a class="navbar-brand" href="{{ url_for('index')}}"><img src="/static/img/nav-logo.png"></a>
+		<button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon navbar-light"></span>
+  </button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item nav-text active">
+					<a class="nav-link nav-text" href="{{ url_for('show_all_photos')}}">#Gallery <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-text" href="{{ url_for('create_photo')}}">+Add</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-text" href="#">#Photography Genre</a>
+				</li>
+
+			</ul>
+
+		</div>
+</nav>
+
+<h1 class="mt-2 mb-5">+Add New Photograph Entry</h1>
 <form method="POST">
   <div class="form-group">
-    <label>Image Title</label>
+    <label class="form-label">Image Title</label>
     <input type="text" class="form-control" name="image_name" />
   </div>
 
   <div class="row">
     <div class="form-group col">
-      <label>Name of Photographer</label>
+      <label class="form-label">Name of Photographer</label>
       <input type="text" class="form-control" name="photographer_name" />
     </div>
 
     <div class="form-group col">
-      <label>Location</label>
+      <label class="form-label">Location</label>
       <input type="text" class="form-control" name="image_location" />
     </div>
 
     <div class="form-group col">
-      <label>Date</label>
+      <label class="form-label">Date</label>
       <input type="date" class="form-control" name="image_year" />
     </div>
   </div>
 
   <div class="form-group">
-    <label>Photography Type</label>
+    <label class="form-label">Photography Type</label>
     <select class="form-control" name="photography_type">
       {%for type in all_photography_types %}
       <option value="{{type._id}}">{{type.type_name}}</option>
@@ -33,7 +57,7 @@
   </div>
 
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Photograph Description</label>
+    <label class="form-label" for="exampleFormControlTextarea1">Photograph Description</label>
     <textarea
       class="form-control"
       rows="3"
@@ -43,45 +67,45 @@
 
   <div class="row">
     <div class="form-group col">
-      <label>Camera Make</label>
+      <label class="form-label">Camera Make</label>
       <input type="text" class="form-control" name="camera_make" />
     </div>
 
     <div class="form-group col">
-      <label>Camera Model</label>
+      <label class="form-label">Camera Model</label>
       <input type="text" class="form-control" name="camera_model" />
     </div>
 
     <div class="form-group col">
-      <label>Focal Length</label>
+      <label class="form-label">Focal Length</label>
       <input type="text" class="form-control" name="focal_length" />
     </div>
   </div>
 
   <div class="row">
     <div class="form-group col">
-      <label>Aperture</label>
+      <label class="form-label">Aperture</label>
       <input type="text" class="form-control" name="aperture" />
     </div>
 
     <div class="form-group col">
-      <label>Shutter Speed</label>
+      <label class="form-label">Shutter Speed</label>
       <input type="text" class="form-control" name="shutter_speed" />
     </div>
 
     <div class="form-group col">
-      <label>ISO</label>
+      <label class="form-label">ISO</label>
       <input type="text" class="form-control" name="iso" />
     </div>
 </div>
 
     <div>
-        <a id="upload_widget" class="cloudinary-button btn-primary btn mb-3">Upload Photograph</a>
+        <a id="upload_widget" class="btn-custom btn btn-block mb-3">Upload Photograph</a>
         <input type="hidden" id="uploaded_file_url" name="uploaded_file_url"/>
-        <p id="uploaded_file_display" style="display:none">Uploaded File Name:<span id="uploaded_file_name"></span></p>
+        <p id="uploaded_file_display" style="display:none">Uploaded File Name: <span id="uploaded_file_name"></span></p>
 
 </div>
-  <input type="submit" class="btn btn-primary" />
+  <input type="submit" class="btn btn-custom btn-block" />
 
 
         <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  

@@ -10,7 +10,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item nav-text active">
-        <a class="nav-link nav-text" href="#">#Gallery <span class="sr-only">(current)</span></a>
+        <a class="nav-link nav-text" href="{{ url_for('show_all_photos')}}">#Gallery <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link nav-text" href="{{ url_for('create_photo')}}">+Add</a>
@@ -29,7 +29,9 @@
   </div>
 </nav>
 
+
 <h1>#Gallery</h1>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Return to Top</button>
 
 <table class="table mt-3">
     <tbody>
@@ -42,7 +44,7 @@
                     <img src="{{photo.uploaded_file_url}}" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
                     </div>
 
-                    <div class="col-sm-6 align-self-center align-items-cente">
+                    <div class="col-sm-6 align-self-center align-items-center">
       
     
                         <div class="col m-0 p-0">
@@ -84,4 +86,27 @@
         {%endfor%}
     </tbody>
 </table>
+{%endblock%}
+{% block js %}
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
 {%endblock%}
