@@ -9,8 +9,9 @@ load_dotenv()
 app = Flask(__name__)
 
 CLOUD_NAME = os.environ.get("CLOUD_NAME")
-
 MONGO_URI = os.environ.get('MONGO_URL')
+UPLOAD_PRESET= os.environ.get("UPLOAD_PRESET")
+
 DB_NAME = "ardour_photography"
 
 client = pymongo.MongoClient(MONGO_URI)
@@ -58,7 +59,10 @@ def show_all_photos():
 @app.route('/photo/create')
 def create_photo():
     all_photography_types = client[DB_NAME].photography_types.find()
-    return render_template('create_photo.template.html', all_photography_types=all_photography_types)
+    return render_template('create_photo.template.html', 
+                            all_photography_types=all_photography_types, 
+                            cloud_name=CLOUD_NAME, 
+                            upload_preset=UPLOAD_PRESET)
 
 
 @app.route('/photo/create', methods=["POST"])
@@ -75,6 +79,7 @@ def process_create_photo():
     aperture = request.form.get('aperture')
     shutter_speed = request.form.get('shutter_speed')
     iso = request.form.get('iso')
+    uploaded_file_url = request.form.get('uploaded_file_url')
 
     photography_type_object = client[DB_NAME].photography_types.find_one({
         "_id": ObjectId(photography_type)
@@ -95,7 +100,8 @@ def process_create_photo():
         "focalLength": focal_length,
         "aperture": aperture,
         "shutterSpeed": shutter_speed,
-        "iso": iso
+        "iso": iso,
+        "uploaded_file_url": uploaded_file_url
     })
 
     return redirect(url_for('show_all_photos'))
@@ -109,7 +115,7 @@ def update_photo(id):
 
     all_photography_types = client[DB_NAME].photography_types.find()
 
-    return render_template("update_photo_template.html", photo=photo, all_photography_types=all_photography_types)
+    return render_template("update_photo_template.html", photo=photo, all_photography_types=all_photography_types, cloud_name=CLOUD_NAME, upload_preset=UPLOAD_PRESET)
 
 
 @app.route('/photo/update/<id>', methods=["POST"])
@@ -126,6 +132,7 @@ def process_update_photo(id):
     aperture = request.form.get('aperture')
     shutter_speed = request.form.get('shutter_speed')
     iso = request.form.get('iso')
+    uploaded_file_url = request.form.get('uploaded_file_url')
 
     photography_type_object = client[DB_NAME].photography_types.find_one({
         "_id": ObjectId(photography_type)
@@ -149,7 +156,8 @@ def process_update_photo(id):
             "focalLength": focal_length,
             "aperture": aperture,
             "shutterSpeed": shutter_speed,
-            "iso": iso
+            "iso": iso,
+            "uploaded_file_url": uploaded_file_url
         }
     })
 
