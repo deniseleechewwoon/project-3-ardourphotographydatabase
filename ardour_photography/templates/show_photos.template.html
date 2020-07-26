@@ -1,17 +1,38 @@
 {%extends 'layout.template.html' %}
+<link rel="stylesheet" type="text/css" href="/static/css/style.css">
 {%block content%}
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <a class="navbar-brand" href="{{ url_for('index')}}"><img src="/static/img/nav-logo.png"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<h1>Gallery<a class="btn btn-primary ml-3" href="{{ url_for('create_photo')}}" role="button">Add</a></h1>
-
-
-
-<form class="form-inline mb-3" method="GET">
-    <div>
-        <input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control"/>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item nav-text active">
+        <a class="nav-link nav-text" href="#">#Gallery <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('create_photo')}}">+Add</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">#Photography Genre</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control"/>
         <input type="submit" value="Search" class="ml-3 form-control btn-dark"/>
-    </div>
+    </form>
+  </div>
+</nav>
 
-    <div class="container mt-2">
+<h1>Gallery</h1>
+
+
+
+<form class="form-inline mb-3 " method="GET">
+
+    <div class="container animate-custom mt-2">
         <input type="checkbox" name="type_wedding" class="form-check-input ml-3"/>Wedding Photography
         <input type="checkbox" name="type_event" class="form-check-input ml-3"/>Event Photography
         <input type="checkbox" name="type_portrait" class="form-check-input ml-3"/>Portrait Photography

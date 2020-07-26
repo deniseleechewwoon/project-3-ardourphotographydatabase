@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/645eed7c32.js" crossorigin="anonymous"></script>
 
     <!--Font Styles-->
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
 
     <title>Ardour Photography</title>
 </head>
@@ -23,27 +23,40 @@
     
     <!--Masthead-->
 
-        <header class="masthead animate-custom" style="background-image: url(/static/img/home-photo.jpg);">
-      <div class="container fluid h-100">
-        <div class="row h-100 align-items-center">
-        <div class="col-12 text-center mt-5 pt-5 mt-md-0 pt-md-0">
-          <div>
-          
-          <a class="mx-auto fluid" href="#">
-          <img src="/static/img/home-page-logo.png" alt="logo" width="500" height="250" class="img-fluid align-items-center animate-custom mb-2 pb-5">
-        </a>
-          <div class="container fluid font-weight-light text-secondary font-italic">
-          <a href="{{ url_for('show_all_photos')}}" class="font-weight-light text-secondary font-italic">#Gallery</a>
-          <a href="{{ url_for('create_photo')}}" class="font-weight-light text-secondary font-italic pl-4 ml-3">+Add</a>
-          <a href="{{ url_for('show_all_photos')}}" class="font-weight-light text-secondary font-italic pl-4 ml-3">#Photography Genre</a>
-          </div>
-        </div>
-        </div>
-        </div>
-      </div>
-
-
-    </header>
+		<header class="masthead animate-custom" style="background-image: url(/static/img/home-photo.jpg);">
+			<div class="container fluid h-100">
+				<div class="row h-100 align-items-center">
+					<div class="col-12 text-center mt-5 pt-5 mt-md-0 pt-md-0">
+						<div>
+		
+							<a class="mx-auto fluid" href="#">
+								<img src="/static/img/home-page-logo.png" alt="logo" width="500" height="250" class="img-fluid align-items-center animate-custom mb-2 pb-5">
+		                    </a>
+		
+								<div class="row justify-content-md-center mt-3">
+									<div class="col col-lg-3">
+										<a href="{{ url_for('show_all_photos')}}"
+											class="text-secondary font-italic">#Gallery</a>
+									</div>
+									<div class="col-md-auto">
+										<a href="{{ url_for('create_photo')}}"
+											class="text-secondary font-italic">+Add</a>
+									</div>
+									<div class="col col-lg-3">
+										<a href="{{ url_for('show_all_photos')}}"
+											class="text-secondary font-italic">#Photography
+											Genre</a>
+									</div>
+								</div>
+		
+		
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		
+		</header>
 
     <!--Footer-->
 	  <footer class="footer-copyright text-center py-2 footer-light footer-custom">Ardour Photography© 2020 Database Copyright</footer>

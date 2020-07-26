@@ -7,6 +7,15 @@
     font-family: 'Lato', sans-serif;
 }
 
+body {
+  background-color: lightblue;
+}
+
+.center-logo {
+  display: flex;
+  align-items: center;
+}
+
 .animate-custom {
 	position: relative;
 	animation: mymove 1.2s;
@@ -18,7 +27,3 @@
 
 }
 
-.center-logo {
-  display: flex;
-  align-items: center;
-}
