@@ -9,7 +9,7 @@ load_dotenv()
 app = Flask(__name__)
 
 CLOUD_NAME = os.environ.get("CLOUD_NAME")
-MONGO_URI = os.environ.get('MONGO_URL')
+MONGO_URI = os.environ.get('MONGO_URI')
 UPLOAD_PRESET= os.environ.get("UPLOAD_PRESET")
 
 DB_NAME = "ardour_photography"
