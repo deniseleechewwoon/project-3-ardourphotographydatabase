@@ -1,10 +1,10 @@
 {%extends 'layout.template.html' %}
-<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+
 {%block content%}
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+<nav class="navbar navbar-expand-lg">
   <a class="navbar-brand" href="{{ url_for('index')}}"><img src="/static/img/nav-logo.png"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+  <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon navbar-light"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -13,34 +13,23 @@
         <a class="nav-link nav-text" href="#">#Gallery <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('create_photo')}}">+Add</a>
+        <a class="nav-link nav-text" href="{{ url_for('create_photo')}}">+Add</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">#Photography Genre</a>
+        <a class="nav-link nav-text" href="#">#Photography Genre</a>
       </li>
+      
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control"/>
-        <input type="submit" value="Search" class="ml-3 form-control btn-dark"/>
-    </form>
+
+	<form class="form-inline my-2 my-lg-0">
+	
+		<input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control nav-text"/>
+		<input type="submit" value="Search" class="ml-3 form-control btn-custom"/>
+	    </form>
   </div>
 </nav>
 
-<h1>Gallery</h1>
-
-
-
-<form class="form-inline mb-3 " method="GET">
-
-    <div class="container animate-custom mt-2">
-        <input type="checkbox" name="type_wedding" class="form-check-input ml-3"/>Wedding Photography
-        <input type="checkbox" name="type_event" class="form-check-input ml-3"/>Event Photography
-        <input type="checkbox" name="type_portrait" class="form-check-input ml-3"/>Portrait Photography
-        <input type="checkbox" name="type_product" class="form-check-input ml-3"/>Product Photography
-        <input type="checkbox" name="type_fineart" class="form-check-input ml-3"/>Fine Art Photography
-    </div>
-
-</form>
+<h1>#Gallery</h1>
 
 <table class="table mt-3">
     <tbody>
@@ -49,35 +38,43 @@
                 <td>
 
                 <div class="row">
-                    <div class="col media">
+                    <div class="col-sm-6 media">
                     <img src="{{photo.uploaded_file_url}}" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
                     </div>
 
-                    <div class="col align-self-center align-items-cente">
+                    <div class="col-sm-6 align-self-center align-items-cente">
       
     
-                        <div>
-                        <h3>{{photo.title}}, {{photo.type.name}}</h3>
-                        <p>by <i>{{photo.photographer}}</i> @ {{photo.location}} on {{photo.year}}</p>
-                        <p>{{photo.description}}</p>
+                        <div class="col m-0 p-0">
+                        <h3>{{photo.title}}</h3>
+                        <p class="text-custom">by <i>{{photo.photographer}}</i> @ {{photo.location}} on {{photo.year}}</p>
+                        <p class="text-custom2">{{photo.description}}</p>
                         </div>
 
                         <div class="row">
-                        <div class="col-3"><h6>Camera Make</h6>{{photo.cameraMake}}</div>
-                        <div class="col-3"><h6>Camera Model</h6>{{photo.cameraModel}}</div>
-                        <div class="col-4"><a class="btn btn-primary" href="{{ url_for('update_photo', id=photo._id)}}" role="button">Edit</a></div>
-                        </div>
-
-                        <div class="row mt-2">
-                        <div class="col-3"><h6>Focal Length</h6>{{photo.focalLength}}</div>
-                        <div class="col-3"><h6>Aperture</h6>{{photo.aperture}}</div>
-                        <div class="col-4"><a class="btn btn-danger" href="{{ url_for('delete_photo', id=photo._id)}}" role="button">Delete</a></div>
-                        </div>
-
-                        <div class="row mt-2">
-                        <div class="col-3"><h6>Shutter Speed</h6>{{photo.shutterSpeed}}</div>
-                        <div class="col-3"><h6>ISO</h6>{{photo.iso}}</div>
+                        <div class="col-4"><h6 class="m-0">Camera Make</h6><h7>{{photo.cameraMake}}</h7></div>
+                        <div class="col-4"><h6 class="m-0">Camera Model</h6><h7>{{photo.cameraModel}}</h7></div>
                         <div class="col-4"></div>
+                        </div>
+
+                        <div class="row mt-2">
+                        <div class="col-4"><h6 class="m-0">Focal Length</h6><h7>{{photo.focalLength}}</h7></div>
+                        <div class="col-4"><h6 class="m-0">Aperture</h6><h7>{{photo.aperture}}</h7></div>
+                        <div class="col-4">
+                        <a href="{{ url_for('update_photo', id=photo._id)}}"><img src="/static/img/edit.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+                        </div>
+                        </div>
+
+                        <div class="row mt-2">
+                        <div class="col-4"><h6 class="m-0">Shutter Speed</h6><h7>{{photo.shutterSpeed}}</h7></div>
+                        <div class="col-4"><h6 class="m-0">ISO</h6><h7>{{photo.iso}}</h7></div>
+                        <div class="col-4">
+                        <a href="{{ url_for('delete_photo', id=photo._id)}}"><img src="/static/img/delete.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+                        </div>
+                        </div>
+                        
+                        <div class="row">
+                        <span class="badge badge-custom ml-2 mt-3">{{photo.type.name}}</span>
                         </div>
                         
                     </div>
