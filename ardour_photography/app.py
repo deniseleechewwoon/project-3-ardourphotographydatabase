@@ -181,6 +181,9 @@ def process_delete_photo(id):
 
     return redirect(url_for('show_all_photos'))
 
+@app.route('/photos/genre')
+def genre():
+    return render_template('photos_genre.template.html')
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':

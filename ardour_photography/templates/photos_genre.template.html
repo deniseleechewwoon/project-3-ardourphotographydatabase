@@ -1,0 +1,112 @@
+{%extends 'layout.template.html' %}
+
+{%block content%}
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="{{ url_for('index')}}"><img src="/static/img/nav-logo.png"></a>
+  <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon navbar-light"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item nav-text active">
+        <a class="nav-link nav-text" href="{{ url_for('show_all_photos')}}">#Gallery <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-text" href="{{ url_for('create_photo')}}">+Add</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link nav-text" href="#">#Photography Genre</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+<h1>#Photography Genre</h1>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Return to Top</button>
+
+<table class="table mt-3">
+    <tbody>
+            <tr>
+				<td>
+					<div class="row">
+						<div class="col-sm-5 media">
+							<img src="#" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
+									        </div>
+					
+							<div class="col-sm-7 align-self-center align-items-center">
+								<div class="col m-0 p-0">
+									<h3>Wedding Photography</h3>
+									<p class="text-custom2">The first type of photography job involves weddings and events. Many people
+										go their entire lives and only pay for professional photography once, but nearly everyone hires
+										a photographer for their
+										wedding.<br><br>As a job, being a wedding photographer involves an exciting mix of portraiture and event photography in a wide variety of settings and groups. Wedding photography is pretty intense, with an element of getting the best shot you can on the first try and not really getting a second chance in some situations. Wedding photographers have to be quick on their feet, moving around during the reception and ceremony, and there are substantial sales and customer service components to their jobs. They also have to be adaptable, ready to shoot outdoors on a sunny day and indoors for dimly lit receptions and dances. Couples will expect the direction from the photographer for posing shots and settings, so the photographer must be confident and communicate well with the bride and groom.<br><br>The great wedding photographers are the ones who love their jobs. Many beginning photographers start shooting weddings because, as they say, “that’s where the money is.” But this mindset will ultimately lead to a disappointing business model if the photographer’s heart isn’t in their work.</p>
+								</div>
+							</div>
+						</div>
+				</td>
+            </tr>
+
+            <tr>
+				<td>
+					<div class="row">
+						<div class="col-sm-5 media">
+							<img src="#" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
+									        </div>
+					
+							<div class="col-sm-7 align-self-center align-items-center">
+								<div class="col m-0 p-0">
+									<h3>Event Photography</h3>
+									<p class="text-custom2">In the same vein, event photography is a dynamic and fast-paced way to make a buck with your camera. Whether your beat is corporate events or wild and crazy rock concerts, event photographers work in a variety of settings. Event photography styles often involve a mixture of photojournalistic documentary work and portraiture. Some organizations use their event photos for publicity purposes, while other use party photos as souvenirs or keepsakes.</p>
+								</div>
+							</div>
+						</div>
+				</td>
+            </tr>
+
+            <tr>
+				<td>
+					<div class="row">
+						<div class="col-sm-5 media">
+							<img src="#" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
+									        </div>
+					
+							<div class="col-sm-7 align-self-center align-items-center">
+								<div class="col m-0 p-0">
+									<h3>Portrait Photography</h3>
+									<p class="text-custom2">Portraiture is one of the most common types of photographer that we think of when we consider career options. The kinds of photography that can be included in portraits is astounding. Retail customers seek out portrait photographers for every phase of life: maternity and newborns, school photos, senior photos, and general family photos. Corporate portraits are also commonly needed as employees update their headshots for websites and publicity materials. Furthermore, aspiring and professional models are in constant need of updated portfolios with a catalog of current shots to market themselves for agencies and jobs.<br><br>Portrait photography is a great place to start out as a photographer. Building a great portfolio of quality shots can lead to more business. It can often lead to more work for families and weddings as word of mouth marketing does its magic. It can also lead to fashion and product photography gigs.</p>
+								</div>
+							</div>
+						</div>
+				</td>
+            </tr>
+
+            
+    </tbody>
+</table>
+{%endblock%}
+{% block js %}
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+{%endblock%}
