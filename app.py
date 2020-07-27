@@ -185,6 +185,120 @@ def process_delete_photo(id):
 def genre():
     return render_template('photos_genre.template.html')
 
+
+@app.route('/photo/details/<id>')
+def details_photo(id):
+    photo = client[DB_NAME].photo.find_one({
+        "_id": ObjectId(id)
+    })
+
+    return render_template('details_photo.template.html', photo=photo)
+
+
+@app.route('/photo/details/<id>/review/')
+def create_review(id):
+    photo = client[DB_NAME].photo.find_one({
+        "_id": ObjectId(id)
+    })
+    return render_template('create_review.template.html', photo=photo)
+
+@app.route('/photo/details/<id>/review/', methods=["POST"])
+def process_create_review(id):
+    reviewer_name = request.form.get('reviewer_name')
+    review_date = request.form.get('review_date')
+    reviewer_comment = request.form.get('reviewer_comment')
+
+    client[DB_NAME].photo.update_one({
+        "_id": ObjectId(id),
+    }, {
+        "$push": {
+            'reviews': {
+                "_id": ObjectId(),
+                "reviewer_name": reviewer_name,
+                "review_date": review_date,
+                "reviewer_comment": reviewer_comment
+            }
+        }
+    })
+    return redirect(url_for('details_photo', id=id))
+
+@app.route('/review/<review_id>')
+def update_reviews(review_id):
+    photo = client[DB_NAME].photo.find_one({
+        "reviews._id": ObjectId(review_id)
+    })
+    id = photo['_id']
+    allReviews = client[DB_NAME].photo.find_one({
+        'reviews._id': ObjectId(review_id)
+    }, {
+        'reviews': {
+            '$elemMatch': {
+                '_id': ObjectId(review_id)
+            }
+        }
+    })
+
+    reviews = allReviews['reviews'][0]
+
+    return render_template('update_reviews.template.html',
+                           reviews=reviews,
+                           id=id)
+
+@app.route('/review/<review_id>', methods=["POST"])
+def process_update_reviews(review_id):
+    photo = client[DB_NAME].photo.find_one({
+        "reviews._id": ObjectId(review_id)
+    })
+    id = photo['_id']
+
+    client[DB_NAME].photo.update_one({
+        "reviews._id": ObjectId(review_id)
+    }, {
+        '$set': {
+            'reviews.$.reviewer_name': request.form.get('reviewer_name'),
+            'reviews.$.review_date': request.form.get('review_date'),
+            'reviews.$.reviewer_comment': request.form.get('reviewer_comment')
+        }
+    })
+    return redirect(url_for('details_photo', id=id))
+
+@app.route('/review/<review_id>/delete')
+def delete_review(review_id):
+    photo = client[DB_NAME].photo.find_one({
+        "reviews._id": ObjectId(review_id)
+    })
+    id = photo['_id']
+    review = client[DB_NAME].photo.find_one({
+        'reviews._id': ObjectId(review_id)
+    }, {
+        'reviews': {
+            '$elemMatch': {
+                '_id': ObjectId(review_id)
+            }
+        }
+    })['reviews'][0]
+
+    return render_template('confirm_delete_review.template.html',
+                           review=review,
+                           id=id)
+
+@app.route('/review/<review_id>/delete', methods=["POST"])
+def process_delete_review(review_id):
+    photo = client[DB_NAME].photo.find_one({
+        "reviews._id": ObjectId(review_id)
+    })
+    id = photo['_id']
+    client[DB_NAME].photo.update_one({
+        'reviews._id': ObjectId(review_id)
+    }, {
+        "$pull": {
+            'reviews': {
+                '_id': ObjectId(review_id)
+            }
+        }
+    })
+    return redirect(url_for('details_photo', id=id))
+
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

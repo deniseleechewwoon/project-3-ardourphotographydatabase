@@ -56,7 +56,9 @@
                         <div class="row">
                         <div class="col-4"><h6 class="m-0">Camera Make</h6><h7>{{photo.cameraMake}}</h7></div>
                         <div class="col-4"><h6 class="m-0">Camera Model</h6><h7>{{photo.cameraModel}}</h7></div>
-                        <div class="col-4"></div>
+                        <div class="col-4">
+                        <a href="{{ url_for('details_photo', id=photo._id)}}"><img src="/static/img/view.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+                        </div>
                         </div>
 
                         <div class="row mt-2">
