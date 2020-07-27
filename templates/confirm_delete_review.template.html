@@ -3,7 +3,7 @@
 
 <div class="alert alert-warning text-center">
     <form method="POST">
-        <h5>Are you sure you want to delete review by: {{review.reviewer_name}}?</h5>
+        <h5>Are you sure you want to delete review by {{review.reviewer_name}}?</h5>
         <div>
         <input class="btn btn-custom3" type="submit" value="Confirm"/>
         <a class="btn btn-custom2" href="{{url_for('show_all_photos')}}">Cancel</a>
@@ -11,7 +11,7 @@
     </form>
 </div>
 
-<div class="row">
+<div class="row text-center">
             <div class="col m-0 p-0">
                         <h3>{{review.reviewer_name}}</h3>
                         <p class="text-custom">Commented on <i>{{review.review_date}}</i>

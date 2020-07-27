@@ -58,8 +58,9 @@
                     </div>
                 </div>
 
-    <div class="row">
-    <a href="{{ url_for('create_review', id=photo._id)}}"><img src="/static/img/view.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+    <div class="row justify-content-end pt-2">
+    <p class="text-custom pr-2 pt-1">Add New Comment</p>
+    <a href="{{ url_for('create_review', id=photo._id)}}"><img src="/static/img/add.png" alt="delete-logo" class="img-fluid" width="35px"></a>
     </div>
 
     
@@ -80,10 +81,15 @@
                         <p class="text-custom">Commented on <i>{{review.review_date}}</i>
                         <p class="text-custom2">{{review.reviewer_comment}}</p>
                         </div>
-        <div class="row">
+        <div class="row justify-content-end">
+            <div class=" m-0 pl-3">
             <a href="{{ url_for('update_reviews', review_id=review._id)}}"><img src="/static/img/edit.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+            </div>
+
+            <div class=" m-0 pl-2 justify-content-end">
             <a href="{{ url_for('delete_review', review_id=review._id)}}"><img src="/static/img/delete.png" alt="delete-logo" class="img-fluid" width="35px"></a>
             </div>
+        </div>
                         
                         
                         
