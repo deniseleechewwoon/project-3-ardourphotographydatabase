@@ -10,9 +10,8 @@ The website aims to stimulate the photography ecosystem and allow photographers 
 
 This website is inspired by my [User Centric Frontend Development Milestone Project (1)](https://deniseleechewwoon.github.io/project-1-ardourphotography/index.html) where it features Adour Photography - a fictitious Photography company that has existing photography talents. Hence, Adour Photography Database will be mandatory or highly encouraged to be used by Adour Photography's photographers to showcase their work to the general public. At the same time, it gives other colleagues a platform to share photography techniques.
 
-<a href="https://ibb.co/8dd0fDr"><img src="https://i.ibb.co/CMMzY5b/Project-Pages.jpg" alt="Project-Pages" border="0"/></a>
 
-The site may be viewed [here](https://dlcw-ardour-photography.herokuapp.com/).
+The live site for this Project-Ardour Photography Database may be viewed [here](https://dlcw-ardour-photography.herokuapp.com/).
 
  
 ## UX
