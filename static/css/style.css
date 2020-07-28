@@ -136,6 +136,14 @@ h5{
   border-radius: 4px;
 }
 
-#myBtn:hover {
-  background-color: #555;
+
+.box {
+  cursor: pointer;
+  text-align: center;
+  transition-property: border-radius;
+  transition-duration: .2s, 1s;
+  transition-timing-function: linear;
+}
+.box:hover {
+  border-radius: 50%;
 }

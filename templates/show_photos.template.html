@@ -55,7 +55,7 @@
                         <div class="col-4"><h6 class="m-0">Camera Make</h6><h7>{{photo.cameraMake}}</h7></div>
                         <div class="col-4"><h6 class="m-0">Camera Model</h6><h7>{{photo.cameraModel}}</h7></div>
                         <div class="col-4">
-                        <a href="{{ url_for('details_photo', id=photo._id)}}"><img src="/static/img/view.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+                            <a href="{{ url_for('details_photo', id=photo._id)}}"><img src="/static/img/view.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="view more"></a>
                         </div>
                         </div>
 
@@ -63,7 +63,7 @@
                         <div class="col-4"><h6 class="m-0">Focal Length</h6><h7>{{photo.focalLength}}</h7></div>
                         <div class="col-4"><h6 class="m-0">Aperture</h6><h7>{{photo.aperture}}</h7></div>
                         <div class="col-4">
-                        <a href="{{ url_for('update_photo', id=photo._id)}}"><img src="/static/img/edit.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+                        <a href="{{ url_for('update_photo', id=photo._id)}}"><img src="/static/img/edit.png" alt="edit-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="edit"></a>
                         </div>
                         </div>
 
@@ -71,7 +71,7 @@
                         <div class="col-4"><h6 class="m-0">Shutter Speed</h6><h7>{{photo.shutterSpeed}}</h7></div>
                         <div class="col-4"><h6 class="m-0">ISO</h6><h7>{{photo.iso}}</h7></div>
                         <div class="col-4">
-                        <a href="{{ url_for('delete_photo', id=photo._id)}}"><img src="/static/img/delete.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+                        <a href="{{ url_for('delete_photo', id=photo._id)}}"><img src="/static/img/delete.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="delete"></a>
                         </div>
                         </div>
                         

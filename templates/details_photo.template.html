@@ -15,7 +15,7 @@
         <a class="nav-link nav-text" href="{{ url_for('create_photo')}}">+Add</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-text" href="#">#Photography Genre</a>
+        <a class="nav-link nav-text" href="{{ url_for('genre')}}">#Photography Genre</a>
       </li>
       
     </ul>
@@ -27,7 +27,7 @@
                     <img src="{{photo.uploaded_file_url}}" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
                     </div>
 
-                    <div class="col-sm-6 align-self-center align-items-cente">
+                    <div class="col-sm-6 align-self-center align-items-center">
       
     
                         <div class="col m-0 p-0">
@@ -61,7 +61,7 @@
 
     <div class="row justify-content-end pt-2">
     <p class="text-custom pr-2 pt-1">Add New Comment</p>
-    <a href="{{ url_for('create_review', id=photo._id)}}"><img src="/static/img/add.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+    <a href="{{ url_for('create_review', id=photo._id)}}"><img src="/static/img/add.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="add"></a>
     </div>
 
     
@@ -84,11 +84,11 @@
                         </div>
         <div class="row justify-content-end">
             <div class=" m-0 pl-3">
-            <a href="{{ url_for('update_reviews', review_id=review._id)}}"><img src="/static/img/edit.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+            <a href="{{ url_for('update_reviews', review_id=review._id)}}"><img src="/static/img/edit.png" alt="edit-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="edit"></a>
             </div>
 
             <div class=" m-0 pl-2 justify-content-end">
-            <a href="{{ url_for('delete_review', review_id=review._id)}}"><img src="/static/img/delete.png" alt="delete-logo" class="img-fluid" width="35px"></a>
+            <a href="{{ url_for('delete_review', review_id=review._id)}}"><img src="/static/img/delete.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="delete"></a>
             </div>
         </div>
                         
