@@ -69,6 +69,7 @@ def create_photo():
 def process_create_photo():
     image_name = request.form.get('image_name')
     photographer_name = request.form.get('photographer_name')
+    photographer_email = request.form.get('photographer_email')
     image_location = request.form.get('image_location')
     image_year = request.form.get('image_year')
     photography_type = request.form.get('photography_type')
@@ -88,6 +89,7 @@ def process_create_photo():
     client[DB_NAME].photo.insert_one({
         "title": image_name,
         "photographer": photographer_name,
+        "email": photographer_email,
         "location": image_location,
         "year": image_year,
         "type": {
@@ -122,6 +124,7 @@ def update_photo(id):
 def process_update_photo(id):
     image_name = request.form.get('image_name')
     photographer_name = request.form.get('photographer_name')
+    photographer_email = request.form.get('photographer_email')
     image_location = request.form.get('image_location')
     image_year = request.form.get('image_year')
     photography_type = request.form.get('photography_type')
@@ -144,6 +147,7 @@ def process_update_photo(id):
         "$set": {
             "title": image_name,
             "photographer": photographer_name,
+            "email": photographer_email,
             "location": image_location,
             "year": image_year,
             "type": {

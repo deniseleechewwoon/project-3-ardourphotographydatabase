@@ -16,12 +16,13 @@
                     <img src="{{photo.uploaded_file_url}}" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
                     </div>
 
-                    <div class="col-sm-6 align-self-center align-items-center">
+                    <div class="col-sm-6 align-self-center align-items-cente">
       
     
                         <div class="col m-0 p-0">
                         <h3>{{photo.title}}</h3>
-                        <p class="text-custom">by <i>{{photo.photographer}}</i> @ {{photo.location}} on {{photo.year}}</p>
+                        <p class="text-custom">@ {{photo.location}} on {{photo.year}}</p>
+                        <p class="text-custom4">by <i>{{photo.photographer}}</i>, {{photo.email}}</p>
                         <p class="text-custom2">{{photo.description}}</p>
                         </div>
 
@@ -43,8 +44,7 @@
                         <div class="row">
                         <span class="badge badge-custom ml-2 mt-3">{{photo.type.name}}</span>
                         </div>
-                        
+
                     </div>
                 </div>
-
 {%endblock%}
