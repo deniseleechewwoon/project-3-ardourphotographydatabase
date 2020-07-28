@@ -15,6 +15,12 @@ The live site for this Project-Ardour Photography Database may be viewed [here](
 
  
 ## UX
+
+The target audience for the website will be
+* Photography enthusiasts
+* General public doing leisure browsing or looking for\photography talenst
+ 
+In order to achieve the intent of capturing the viewers attention to the photography works that are showcased, the website aims to portray a very simple and minimalist feel. The use of blank space and clean minimalist icons to allow the viewer attention to be focused mainly on the photography works. A five-colour palette scheme consisting of mostly warm colours was maintained throughout the whole website design. This is consistent and evident through the the wireframe. A copy of the wireframe me be viewed [here](link).
  
 Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
