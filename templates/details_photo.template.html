@@ -23,8 +23,10 @@
 </nav>
 
 <div class="row">
-                    <div class="col-sm-6 media">
+                    <div class="col-sm-6 media cards-gallery">
+                    <a class="lightbox" href="{{photo.uploaded_file_url}}">
                     <img src="{{photo.uploaded_file_url}}" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
+                    </a>
                     </div>
 
                     <div class="col-sm-6 align-self-center align-items-center">
@@ -102,4 +104,12 @@
 </table>
     </div>
 
+{%endblock%}
+
+{% block js %}
+</script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script>
+	      baguetteBox.run('.cards-gallery', {animation: 'slideIn'});
+	  </script>
 {%endblock%}
