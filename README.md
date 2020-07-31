@@ -31,11 +31,11 @@ Apart from that, the display of the photography entries differs form a desktop a
 ## Features
 ### Existing Features
  
-* [Landing Page] (https://dlcw-ardour-photography.herokuapp.com/)
+* [Landing Page](https://dlcw-ardour-photography.herokuapp.com/)
     1. Animated Page, slides in together with Company Logo from top of page - Brings some life to the static page.
     2. The use of a landing page is to welcome the users before they enter the gallery page with informative content.
 
-* [Add Page- Create] (https://dlcw-ardour-photography.herokuapp.com/photo/create)
+* [Add Page- Create](https://dlcw-ardour-photography.herokuapp.com/photo/create)
     1. Create new Photography entry to the database comprising of the following
     - Title
     - Name of Photographer
@@ -47,7 +47,7 @@ Apart from that, the display of the photography entries differs form a desktop a
     - Photography Details (Camera Make and Model, Focal Length, Aperture, Shutter Speed and ISO used)
     - Upload Image via the Cloudinary Platform
 
-* [View Gallery Page - Read] (https://dlcw-ardour-photography.herokuapp.com/photos)
+* [View Gallery Page - Read](https://dlcw-ardour-photography.herokuapp.com/photos)
     1. Clear Nav Bar stack to the top of the page to allow user to navigate to other Pages
     2. Search Bar feature on top of page to allow user to search through gallery Database by category and searh terms
     3. Once the page is scroll down, a "Return to Top" Button appears at the buttom right hand corner of the page to help user navigate easily back to the top of the page.
@@ -55,22 +55,22 @@ Apart from that, the display of the photography entries differs form a desktop a
     5. Each photograph will be displayed in a simple lightbox with toggle click feature.
     6. Basically, from this page, users may navigate to a) create new entries by clicking Add form Navbar, b) read all the entries by scrolling through the page and click on the eye icon to view more information and comments, c) update each entry by clicking on the pencil icon and d) delete entry by clicking on the bin icon.
 
-* [Edit Page - Update] (https://dlcw-ardour-photography.herokuapp.com/photo/update/5f1a5c06b99c35e5d6863573)
+* [Edit Page - Update](https://dlcw-ardour-photography.herokuapp.com/photo/update/5f1a5c06b99c35e5d6863573)
     1. Edit all details of the photography entry
     2. Upload new photograph
 
-* [Delete Page - Delete] (https://dlcw-ardour-photography.herokuapp.com/photo/delete/5f1a5c06b99c35e5d6863573)
+* [Delete Page - Delete](https://dlcw-ardour-photography.herokuapp.com/photo/delete/5f1a5c06b99c35e5d6863573)
     1. Delete the photography entry
     2. A confirmation message shown on top of the page to reassure the user's intent to delete
     3. Show the photography entry details to the users again
     4. If user select cancel, it will bring them back to the view gallery page
 
-* [View Photo Entry Page] (https://dlcw-ardour-photography.herokuapp.com/photo/details/5f1a5c06b99c35e5d6863573)
+* [View Photo Entry Page](https://dlcw-ardour-photography.herokuapp.com/photo/details/5f1a5c06b99c35e5d6863573)
     1. View more details of each entry
     2. Each photograph will be displayed in a simple lightbox with toggle click feature.
     3. Comments section included with CRUD feature for the comments as well.
 
-* [Photography Genre Page] (https://dlcw-ardour-photography.herokuapp.com/photos/genre) 
+* [Photography Genre Page](https://dlcw-ardour-photography.herokuapp.com/photos/genre) 
     1. Feature the different types of photography with images to illustrate
     2. Allow users to gain some knowledge in types of photography available
 
@@ -80,32 +80,92 @@ Apart from that, the display of the photography entries differs form a desktop a
 - Feature 3 - Like or Share the photography entries to user's social media profile
 
 ## Technologies Used
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
-- [JQuery](https://jquery.com)
+* [HTML](https://www.w3schools.com/html/) - standard markup language for creating web pages
+    - HTML is basically used throughout the whole document to construct the various segments and putting things together
+
+* [CSS](https://www.w3schools.com/css/) - describes the style of the HTML document
+    - CSS is important to maintain the look, style and feel of the website
+
+* [Bootstrap 4.4](https://getbootstrap.com/docs/4.4/getting-started/introduction/) - popular framework for building responsive, mobile-first sites
+    - Bootstrap framework makes things easier to have basic features and minimised the use of css styling with bootstrap features
+
+* [Javascript](https://www.youtube.com/watch?v=gnDOjWUSHks)
+    - Javascript is used to create a responsive lightbox - modal image gallery
+    - Javascript is used for the uploading of images from Cloudinary
+
+* [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
+
+* [Python](https://www.python.org/)
+    - General-purpose coding language used with Flask Application in this project
+
+* [Jinja](https://jinja.palletsprojects.com/en/2.11.x/)
+    - Text-based template language and thus can be used to generate any markup as well as source code. The Jinja template engine allows customization of tags, filters, tests, and globals.
+
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/)
+    - Web application framework used for the project
+
+* [MongoDB](https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_apac_singapore_search_brand_atlas_desktop&utm_term=mongodb%20atlas&utm_medium=cpc_paid_search&utm_ad=e&gclid=EAIaIQobChMI_-Ga0cSh6gIVWX8rCh1YWQCzEAAYASAAEgKjNvD_BwE)
+    - Database to be updated for CRUD features
+
+* [Google Fonts](https://fonts.google.com/)
+    - Used of appropriate fonts for website theme
+
 ## Testing
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+The site is manually tested on a macbook pro, windows laptop, andriod mobile device (Samsung note 9) and ipad to ensure the responsiveness and that all the links work well.
+
+* Page content fits device width and is responsive on all devices
+* Text on the page is readable
+* Links and tap targets are sufficiently large and touch-friendly
+* The navbar to access all the Sections (View Gallery > Add > Photography Genre) is tested to ensure it works well
+
+On all platforms, the following were tested
+
+1. Landing Page
+    - The animated graphics in effect of the page works well with every refresh
+    - The button is able to bring the users to the main section works well
+2. Gallery Page
+    - The graphics show up without error on every refresh
+    - Navbar links work well
+    - Searchbar: Selected a photography category and enter a blank search term displays all entries of the search term
+    - Searchbar: Selected a photography catergory with a specific search term return a result of only "search term" within that category
+    - Upon click on image, it displayed well in a lightbox
+    - Side icons on each entry display tooltip well and brings users to respective pages well. Animated icon also work well.
+    - Return to top shows up with scrolling of page and upon click return to top of page
+3. View Entry Page
+    - Details were displayed well with click from main gallery page
+    - CRUD works well for each commenting
+    - Added a comment, edited and deleted it, works well
+4. Edit Entry Page
+    - Details displayed were of selected entry from main gallery page
+    - Tried to update all fields and uploaded a new image and it displays well and reeturn to main gallery page
+5. Delete Entry Page
+    - Details displayed were of selected entry from main gallery page
+    - Click on Delete and Entry was deleted and return to main gallery page
+    - Click on cancel and entry was not deleted and return to main gallery page
+6. Photography Genre Page
+    - The graphics and description show up without error on every refresh
+
+The site was manually tested on different browsers (Chrome, Safari, Morzilla Firefox and Internet Explorer).
+The site works well on all browsers.
+
+The site was also tested using online platform [Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) and results show that page is mobile friendly and easy to use on a mobile device.
+
 ## Deployment
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-In addition, if it is not obvious, you should also describe how to run your code locally.
+This site is hosted by Heroku and directly deployed from the master branch and Github. A repository was firstly created using github and commits were pushed to the master branch. Materials are pushed to the GitHub repository with git add, git commit, git push and git push heroku master
+Eventually, the deployed site will be updated automatically upon any new commits on heroku. 
+
 ## Credits
+
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The text for the various sections were taken and modified from the following websites
+
 ### Media
-- The photos used in this site were obtained from ...
+- The photos used in this site were all obtained from [freepik](https://www.freepik.com/home) - a stock image library. Please refer to the full credits and link for each image [here](https://drive.google.com/open?id=1RW7ISUwm2yo8boamNulaxKoPbtTykVB8).
+
 ### Acknowledgements
-- I received inspiration for this project from X
+- CSS Styling by [Bootstrap4](https://getbootstrap.com/).
+- All fonts used for this site are obtained from [google fonts](https://fonts.google.com/).
+
+
+### This website created is for educational use.
