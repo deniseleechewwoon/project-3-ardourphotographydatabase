@@ -158,7 +158,7 @@ Eventually, the deployed site will be updated automatically upon any new commits
 ## Credits
 
 ### Content
-- The text for the various sections were taken and modified from the following websites
+- The text for the Photography Genre is taken and modified from the following website
     - [Pixpa-Types of Photography](https://www.pixpa.com/blog/types-of-photography)
 
 ### Media
