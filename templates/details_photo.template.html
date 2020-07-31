@@ -1,115 +1,130 @@
 {%extends 'layout.template.html' %}
 {%block content%}
 <nav class="navbar navbar-expand-md">
-  <a class="navbar-brand" href="{{ url_for('index')}}"><img src="/static/img/nav-logo.png"></a>
-  <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<a class="navbar-brand" href="{{ url_for('index')}}"><img src="/static/img/nav-logo.png"></a>
+		<button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon navbar-light"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item nav-text active">
-        <a class="nav-link nav-text" href="{{ url_for('show_all_photos')}}">#Gallery <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-text" href="{{ url_for('create_photo')}}">+Add</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-text" href="{{ url_for('genre')}}">#Photography Genre</a>
-      </li>
-      
-    </ul>
-  </div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item nav-text active">
+					<a class="nav-link nav-text" href="{{ url_for('show_all_photos')}}">#Gallery
+						<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-text" href="{{ url_for('create_photo')}}">+Add</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-text" href="{{ url_for('genre')}}">#Photography Genre</a>
+				</li>
+
+			</ul>
+		</div>
 </nav>
 
 <div class="row">
-                    <div class="col-sm-6 media cards-gallery">
-                    <a class="lightbox" href="{{photo.uploaded_file_url}}">
-                    <img src="{{photo.uploaded_file_url}}" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
+	<div class="col-sm-6 media cards-gallery">
+		<a class="lightbox" href="{{photo.uploaded_file_url}}">
+			<img src="{{photo.uploaded_file_url}}" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
                     </a>
-                    </div>
+	</div>
 
-                    <div class="col-sm-6 align-self-center align-items-center">
-      
-    
-                        <div class="col m-0 p-0">
-                        <h3>{{photo.title}}</h3>
-                        <p class="text-custom">@ {{photo.location}} on {{photo.year}}</p>
-                        <p class="text-custom4">by <i>{{photo.photographer}}</i>, {{photo.email}}</p>
-                        <p class="text-custom2">{{photo.description}}</p>
-                        </div>
+	<div class="col-sm-6 align-self-center align-items-center">
 
-                        <div class="row">
-                        <div class="col-6"><h6 class="m-0">Camera Make</h6><h7>{{photo.cameraMake}}</h7></div>
-                        <div class="col-6"><h6 class="m-0">Camera Model</h6><h7>{{photo.cameraModel}}</h7></div>
-                        </div>
 
-                        <div class="row mt-2">
-                        <div class="col-6"><h6 class="m-0">Focal Length</h6><h7>{{photo.focalLength}}</h7></div>
-                        <div class="col-6"><h6 class="m-0">Aperture</h6><h7>{{photo.aperture}}</h7></div>
-                        </div>
+		<div class="col m-0 p-0">
+			<h3>{{photo.title}}</h3>
+			<p class="text-custom">@ {{photo.location}} on {{photo.year}}</p>
+			<p class="text-custom4">by <i>{{photo.photographer}}</i>, {{photo.email}}</p>
+			<p class="text-custom2">{{photo.description}}</p>
+		</div>
 
-                        <div class="row mt-2">
-                        <div class="col-6"><h6 class="m-0">Shutter Speed</h6><h7>{{photo.shutterSpeed}}</h7></div>
-                        <div class="col-6"><h6 class="m-0">ISO</h6><h7>{{photo.iso}}</h7></div>
-                        </div>
-                        
-                        <div class="row">
-                        <span class="badge badge-custom ml-2 mt-3">{{photo.type.name}}</span>
-                        </div>
+		<div class="row">
+			<div class="col-6">
+				<h6 class="m-0">Camera Make</h6>
+				<h7>{{photo.cameraMake}}</h7>
+			</div>
+			<div class="col-6">
+				<h6 class="m-0">Camera Model</h6>
+				<h7>{{photo.cameraModel}}</h7>
+			</div>
+		</div>
 
-                    </div>
-                </div>
+		<div class="row mt-2">
+			<div class="col-6">
+				<h6 class="m-0">Focal Length</h6>
+				<h7>{{photo.focalLength}}</h7>
+			</div>
+			<div class="col-6">
+				<h6 class="m-0">Aperture</h6>
+				<h7>{{photo.aperture}}</h7>
+			</div>
+		</div>
 
-    <div class="row justify-content-end pt-2">
-    <p class="text-custom pr-2 pt-1">Add New Comment</p>
-    <a href="{{ url_for('create_review', id=photo._id)}}"><img src="/static/img/add.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="add"></a>
-    </div>
+		<div class="row mt-2">
+			<div class="col-6">
+				<h6 class="m-0">Shutter Speed</h6>
+				<h7>{{photo.shutterSpeed}}</h7>
+			</div>
+			<div class="col-6">
+				<h6 class="m-0">ISO</h6>
+				<h7>{{photo.iso}}</h7>
+			</div>
+		</div>
 
-    
+		<div class="row">
+			<span class="badge badge-custom ml-2 mt-3">{{photo.type.name}}</span>
+		</div>
 
-    <div class="row">
+	</div>
+</div>
 
-<table class="table mt-2">
-    <tbody>
-        {%for review in photo.reviews %}
-            <tr>
-                <td>
-                    <div class="col-sm-12 align-self-center align-items-center">
+<div class="row justify-content-end pt-2">
+	<p class="text-custom pr-2 pt-1">Add New Comment</p>
+	<a href="{{ url_for('create_review', id=photo._id)}}"><img src="/static/img/add.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="add"></a>
+</div>
 
-                        
-    
-                        <div class="col m-0 p-0">
-                        <h3>{{review.reviewer_name}}</h3>
-                        <p class="text-custom">Commented on <i>{{review.review_date}}</i>
-                        <p class="text-custom2">{{review.reviewer_comment}}</p>
-                        </div>
-        <div class="row justify-content-end">
-            <div class=" m-0 pl-3">
-            <a href="{{ url_for('update_reviews', review_id=review._id)}}"><img src="/static/img/edit.png" alt="edit-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="edit"></a>
-            </div>
 
-            <div class=" m-0 pl-2 justify-content-end">
-            <a href="{{ url_for('delete_review', review_id=review._id)}}"><img src="/static/img/delete.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="delete"></a>
-            </div>
-        </div>
-                        
-                        
-                        
-                    </div>
-                </td>
-            </tr>
-        {%endfor%}
-    </tbody>
-</table>
-    </div>
+
+<div class="row">
+	<table class="table mt-2">
+		<tbody>
+			{%for review in photo.reviews %}
+			<tr>
+				<td>
+					<div class="col-sm-12 align-self-center align-items-center">
+
+
+
+						<div class="col m-0 p-0">
+							<h3>{{review.reviewer_name}}</h3>
+							<p class="text-custom">Commented on <i>{{review.review_date}}</i>
+								<p class="text-custom2">{{review.reviewer_comment}}</p>
+						</div>
+						<div class="row justify-content-end">
+							<div class=" m-0 pl-3">
+								<a href="{{ url_for('update_reviews', review_id=review._id)}}"><img src="/static/img/edit.png" alt="edit-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="edit"></a>
+							</div>
+
+							<div class=" m-0 pl-2 justify-content-end">
+								<a href="{{ url_for('delete_review', review_id=review._id)}}"><img src="/static/img/delete.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="delete"></a>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+			{%endfor%}
+		</tbody>
+	</table>
+</div>
 
 {%endblock%}
 
 {% block js %}
 </script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script>
-	      baguetteBox.run('.cards-gallery', {animation: 'slideIn'});
-	  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script>
+	baguetteBox.run('.cards-gallery', {animation: 'slideIn'});
+</script>
 {%endblock%}

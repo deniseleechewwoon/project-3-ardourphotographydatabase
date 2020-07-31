@@ -2,27 +2,25 @@
 
 {%block content%}
 <nav class="navbar navbar-expand-md">
-  <a class="navbar-brand" href="{{ url_for('index')}}"><img src="/static/img/nav-logo.png"></a>
-  <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<a class="navbar-brand" href="{{ url_for('index')}}"><img src="/static/img/nav-logo.png"></a>
+		<button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon navbar-light"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item nav-text active">
-        <a class="nav-link nav-text" href="{{ url_for('show_all_photos')}}">#Gallery <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-text" href="{{ url_for('create_photo')}}">+Add</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-text" href="{{ url_for('genre')}}">#Photography Genre</a>
-      </li>
-      
-    </ul>
-
-
-  </div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item nav-text active">
+					<a class="nav-link nav-text" href="{{ url_for('show_all_photos')}}">#Gallery
+						<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-text" href="{{ url_for('create_photo')}}">+Add</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link nav-text" href="{{ url_for('genre')}}">#Photography Genre</a>
+				</li>
+			</ul>
+		</div>
 </nav>
 
 
@@ -31,141 +29,161 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top">Return to Top</button>
 
 <div class="col">
-<form class="form-inline my-lg-0">
-        <div class="row">
-         <a class="btn btn-custom4 ml-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Select a Photography Category >>
-  </a>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body ml-3">
-            <label class="container2">Wedding
+	<form class="form-inline my-lg-0">
+		<div class="row">
+			<a class="btn btn-custom4 ml-3" data-toggle="collapse" href="#collapseExample" role="button"
+				aria-expanded="false" aria-controls="collapseExample">Select a Photography Category >>
+			</a>
+			<div class="collapse" id="collapseExample">
+				<div class="card card-body ml-3">
+					<label class="container2">Wedding
         <input type="checkbox" name="type_wedding">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Event
+					<label class="container2">Event
         <input type="checkbox" name="type_event">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Portrait
+					<label class="container2">Portrait
         <input type="checkbox" name="type_portrait">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Product
+					<label class="container2">Product
         <input type="checkbox" name="type_product">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Fine Art
+					<label class="container2">Fine Art
         <input type="checkbox" name="type_fineart">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Fashion
+					<label class="container2">Fashion
         <input type="checkbox" name="type_fashion">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Artitectural
+					<label class="container2">Artitectural
         <input type="checkbox" name="type_artitectural">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Travel
+					<label class="container2">Travel
         <input type="checkbox" name="type_travel">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Photojournalism
+					<label class="container2">Photojournalism
         <input type="checkbox" name="type_photojournalism">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Lifestyle
+					<label class="container2">Lifestyle
         <input type="checkbox" name="type_lifestyle">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Pet
+					<label class="container2">Pet
         <input type="checkbox" name="type_pet">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Sports
+					<label class="container2">Sports
         <input type="checkbox" name="type_Sports">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Aerial
+					<label class="container2">Aerial
         <input type="checkbox" name="type_aerial">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Specialty
+					<label class="container2">Specialty
         <input type="checkbox" name="type_specialty">
         <span class="checkmark"></span>
         </label>
-        <label class="container2">Stock
+					<label class="container2">Stock
         <input type="checkbox" name="type_stock">
         <span class="checkmark"></span>
         </label>
-  </div>
-  </div>
-		<p>
-        <input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control nav-text ml-3"/>
+				</div>
+			</div>
+			<p>
+				<input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control nav-text ml-3"/>
 
-		<input type="submit" value="Search" class="ml-3 form-control btn-custom"/>
-        <p>
-        
-	    </form>
+				<input type="submit" value="Search" class="ml-3 form-control btn-custom"/>
+			</p>
+		</div>
+	</form>
 </div>
+
 <table class="table mt-2">
-    <tbody>
-        {%for photo in all_photos %}
-            <tr>
-                <td>
+	<tbody>
+		{%for photo in all_photos %}
+		<tr>
+			<td>
 
-                <div class="row mt-4 mb-4">
-                    <div class="col-sm-6 media cards-gallery">
-                    <a class="lightbox" href="{{photo.uploaded_file_url}}">
-                    <img src="{{photo.uploaded_file_url}}" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
+				<div class="row mt-4 mb-4">
+					<div class="col-sm-6 media cards-gallery">
+						<a class="lightbox" href="{{photo.uploaded_file_url}}">
+							<img src="{{photo.uploaded_file_url}}" alt="logo" class="img-fluid align-self-center align-items-center animate-custom">
                     </a>
-                    </div>
+					</div>
 
-                    <div class="col-sm-6 align-self-center align-items-center">
-      
-    
-                        <div class="col m-0 pl-0 pb-3">
-                        <h3>{{photo.title}}</h3>
-                        </div>
+					<div class="col-sm-6 align-self-center align-items-center">
 
-                        <div class="row">
-                        <div class="col-4"><h6 class="m-0">Camera Make</h6><h7>{{photo.cameraMake}}</h7></div>
-                        <div class="col-4"><h6 class="m-0">Camera Model</h6><h7>{{photo.cameraModel}}</h7></div>
-                        <div class="col-4">
-                            <a href="{{ url_for('details_photo', id=photo._id)}}"><img src="/static/img/view.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="view more"></a>
-                        </div>
-                        </div>
 
-                        <div class="row mt-2">
-                        <div class="col-4"><h6 class="m-0">Focal Length</h6><h7>{{photo.focalLength}}</h7></div>
-                        <div class="col-4"><h6 class="m-0">Aperture</h6><h7>{{photo.aperture}}</h7></div>
-                        <div class="col-4">
-                        <a href="{{ url_for('update_photo', id=photo._id)}}"><img src="/static/img/edit.png" alt="edit-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="edit"></a>
-                        </div>
-                        </div>
+						<div class="col m-0 pl-0 pb-3">
+							<h3>{{photo.title}}</h3>
+						</div>
 
-                        <div class="row mt-2">
-                        <div class="col-4"><h6 class="m-0">Shutter Speed</h6><h7>{{photo.shutterSpeed}}</h7></div>
-                        <div class="col-4"><h6 class="m-0">ISO</h6><h7>{{photo.iso}}</h7></div>
-                        <div class="col-4">
-                        <a href="{{ url_for('delete_photo', id=photo._id)}}"><img src="/static/img/delete.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="delete"></a>
-                        </div>
-                        </div>
-                        
-                        <div class="row">
-                        <span class="badge badge-custom ml-2 mt-3">{{photo.type.name}}</span>
-                        </div>
-                        
-                    </div>
-                </div>
-                </td>
-            </tr>
-        {%endfor%}
-    </tbody>
+						<div class="row">
+							<div class="col-4">
+								<h6 class="m-0">Camera Make</h6>
+								<h7>{{photo.cameraMake}}</h7>
+							</div>
+							<div class="col-4">
+								<h6 class="m-0">Camera Model</h6>
+								<h7>{{photo.cameraModel}}</h7>
+							</div>
+							<div class="col-4">
+								<a href="{{ url_for('details_photo', id=photo._id)}}"><img src="/static/img/view.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="view more"></a>
+							</div>
+						</div>
+
+						<div class="row mt-2">
+							<div class="col-4">
+								<h6 class="m-0">Focal Length</h6>
+								<h7>{{photo.focalLength}}</h7>
+							</div>
+							<div class="col-4">
+								<h6 class="m-0">Aperture</h6>
+								<h7>{{photo.aperture}}</h7>
+							</div>
+							<div class="col-4">
+								<a href="{{ url_for('update_photo', id=photo._id)}}"><img src="/static/img/edit.png" alt="edit-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="edit"></a>
+							</div>
+						</div>
+
+						<div class="row mt-2">
+							<div class="col-4">
+								<h6 class="m-0">Shutter Speed</h6>
+								<h7>{{photo.shutterSpeed}}</h7>
+							</div>
+							<div class="col-4">
+								<h6 class="m-0">ISO</h6>
+								<h7>{{photo.iso}}</h7>
+							</div>
+							<div class="col-4">
+								<a href="{{ url_for('delete_photo', id=photo._id)}}"><img src="/static/img/delete.png" alt="delete-logo" class="img-fluid box" width="35px" data-toggle="tooltip" data-placement="right" title="delete"></a>
+							</div>
+						</div>
+
+						<div class="row">
+							<span class="badge badge-custom ml-2 mt-3">{{photo.type.name}}</span>
+						</div>
+
+					</div>
+				</div>
+			</td>
+		</tr>
+		{%endfor%}
+	</tbody>
 </table>
 {%endblock%}
 {% block js %}
 <script>
-//Get the button
+	//Get the button
 var mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
@@ -185,8 +203,8 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 </script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script>
-	      baguetteBox.run('.cards-gallery', {animation: 'slideIn'});
-	  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+<script>
+	baguetteBox.run('.cards-gallery', {animation: 'slideIn'});
+</script>
 {%endblock%}
