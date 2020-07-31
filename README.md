@@ -20,13 +20,13 @@ The target audience for the website will be
 * Photography enthusiasts
 * General public doing leisure browsing or looking for photography talents
  
-In order to achieve the intent of capturing the viewers attention to the photography works that are showcased, the website aims to portray a very simple and minimalist feel. The use of blank space and clean minimalist icons to allow the viewer attention to be focused mainly on the photography works. A five-colour palette scheme consisting of mostly warm colours was maintained throughout the whole website design. This is consistent and evident through the the wireframe. A copy of the wireframe me be viewed [here](https://drive.google.com/file/d/1ZPt-NCnP-v5vOl3gIXFhYpDju0n0uf9y/view?usp=sharing).
+In order to achieve the intent of capturing the viewers attention to the photography works that are showcased, the website aims to portray a very simple and minimalist feel. The use of blank space and clean minimalist icons allow the viewer attention to be focused mainly on the photography works. A five-colour palette scheme consisting of mostly warm colours was maintained throughout the whole website design. This is consistent and evident through the the wireframe. A copy of the wireframe me be viewed [here](https://drive.google.com/file/d/1ZPt-NCnP-v5vOl3gIXFhYpDju0n0uf9y/view?usp=sharing).
 
 Besides the look, the website also ensure that it is user-friendly and interactive. When a user first enter the website, they will be greeted by a welcoming photo followed by three navigation buttons which clearly specifies the intent - view gallery, add a new entry and view various photography genre.
 
-The use of minimal clicks the navigate the website allow users to have a good browsing experience when going through the website. Icons were placed with thought to allow users to intuitively click on them to navigate pages. Photography enthusiasists will enjoy the process of viewing other professional works and sharing of their own knowledge in photography. A commenting section was added to allow some degree of interaction among the enthusiasists and the general public. They may add, edit or event delete entries uploaded. For the general public,they will also find a joy in viewing the beautiful works of the photographers and can even be able to reach out to them for any projects opportunities. With this in mind, when viewers click view more, the details of each entry including email contact will be displayed.
+The use of minimal clicks to navigate the website allow users to have a good browsing experience when going through the website. Icons were placed with thought to allow users to intuitively click on them to navigate pages. Photography enthusiasists will enjoy the process of viewing other professional works and sharing of their own knowledge in photography. A commenting section was added to allow some degree of interaction among the enthusiasists and the general public. They may add, edit or event delete entries uploaded. For the general public,they will also find joy in viewing the beautiful works of the photographers and can even reach out to them for any projects opportunities. With this in mind, when viewers click view more, the details of each entry including email contact will be displayed.
 
-Apart from that, the display of the photography entries differs form a desktop and mobile view to allow the same experience on all devices and platforms. All in all, the website is created with the intent to fulfil the users' needs in a straighforward and forthcoming approach.
+Apart from that, the display of the photography entries differs for a desktop and mobile view to allow the same experience on all devices and platforms. All in all, the website is created with the intent to fulfil the users' needs in a straighforward and forthcoming approach.
 
 ## Features
 ### Existing Features
@@ -36,7 +36,7 @@ Apart from that, the display of the photography entries differs form a desktop a
     2. The use of a landing page is to welcome the users before they enter the gallery page with informative content.
 
 * [Add Page- Create](https://dlcw-ardour-photography.herokuapp.com/photo/create)
-    1. Create new Photography entry to the database comprising of the following
+    - Create new Photography entry to the database comprising of the following
     - Title
     - Name of Photographer
     - Email contact
@@ -159,13 +159,35 @@ Eventually, the deployed site will be updated automatically upon any new commits
 
 ### Content
 - The text for the various sections were taken and modified from the following websites
+    - [Pixpa-Types of Photography](https://www.pixpa.com/blog/types-of-photography)
 
 ### Media
-- The photos used in this site were all obtained from [freepik](https://www.freepik.com/home) - a stock image library. Please refer to the full credits and link for each image [here](https://drive.google.com/open?id=1RW7ISUwm2yo8boamNulaxKoPbtTykVB8).
+- The photos used in this site were all obtained from [Unsplash](https://unsplash.com/) - a stock image library.
+    Please refer to the Links of images used
+    * https://unsplash.com/photos/IfjHaIoAoqE
+    * https://unsplash.com/photos/hzgs56Ze49s
+    * https://unsplash.com/photos/rDEOVtE7vOs
+    * https://unsplash.com/photos/Zv__EnAYD2Q
+    * https://unsplash.com/photos/0bgCyhlq9oU
+    * https://unsplash.com/photos/oV4PktGcXCs
+    * https://unsplash.com/photos/l5Tzv1alcps
+    * https://unsplash.com/photos/YpkuRn54y4w
+    * https://unsplash.com/photos/KwzCKgIxuv0
+    * https://unsplash.com/photos/-WW6b0Mwplc
+    * https://unsplash.com/photos/T-0EW-SEbsE
+    * https://unsplash.com/photos/JjUyjE-oEbM
+    * https://unsplash.com/photos/7nrsVjvALnA
+    * https://unsplash.com/photos/nI4OwVnz0dw
+    * https://unsplash.com/photos/Z5ARQ6WNEqA
 
 ### Acknowledgements
-- CSS Styling by [Bootstrap4](https://getbootstrap.com/).
-- All fonts used for this site are obtained from [google fonts](https://fonts.google.com/).
+- CSS Styling by [Bootstrap4](https://getbootstrap.com/)
+- All fonts used for this site are obtained from [google fonts](https://fonts.google.com/)
+- Theme and Design of Website is inspired by [Art Gallery and Store](https://artgallery.pic-time.com)
+- Scroll to Top function is modified from [w3schools](https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_scroll_to_top)
+- Responsive lightbox image gallery is learnt and obtained from [webseotips](https://www.youtube.com/watch?v=gnDOjWUSHks)
+- Database is used from [MongoDB](https://www.mongodb.com/cloud/atlas/lp/try2?utm_source=google&utm_campaign=gs_apac_singapore_search_brand_atlas_desktop&utm_term=mongodb%20atlas&utm_medium=cpc_paid_search&utm_ad=e&gclid=EAIaIQobChMI_-Ga0cSh6gIVWX8rCh1YWQCzEAAYASAAEgKjNvD_BwE) Platform
+- Icons, design and wireframe are created using [Apple Keynote](https://www.apple.com/sg/keynote/)
+- Flask and MongoDB is learnt and taught from walkthrough by Instructor, Paul Chor from [Trent Global College](https://www.trentglobal.edu.sg/)
 
-
-### This website created is for educational use.
+## This website created is for educational use.
