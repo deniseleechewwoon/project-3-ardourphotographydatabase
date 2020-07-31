@@ -21,18 +21,92 @@
       
     </ul>
 
-	<form class="form-inline my-2 my-lg-0">
-	
-		<input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control nav-text"/>
-		<input type="submit" value="Search" class="ml-3 form-control btn-custom"/>
-	    </form>
+
   </div>
 </nav>
 
 
 <h1>#Gallery</h1>
+
 <button onclick="topFunction()" id="myBtn" title="Go to top">Return to Top</button>
 
+<div class="col">
+<form class="form-inline my-lg-0">
+        <div class="row">
+         <a class="btn btn-custom4 ml-3" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Select a Photography Category >>
+  </a>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body ml-3">
+            <label class="container2">Wedding
+        <input type="checkbox" name="type_wedding">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Event
+        <input type="checkbox" name="type_event">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Portrait
+        <input type="checkbox" name="type_portrait">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Product
+        <input type="checkbox" name="type_product">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Fine Art
+        <input type="checkbox" name="type_fineart">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Fashion
+        <input type="checkbox" name="type_fashion">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Artitectural
+        <input type="checkbox" name="type_artitectural">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Travel
+        <input type="checkbox" name="type_travel">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Photojournalism
+        <input type="checkbox" name="type_photojournalism">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Lifestyle
+        <input type="checkbox" name="type_lifestyle">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Pet
+        <input type="checkbox" name="type_pet">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Sports
+        <input type="checkbox" name="type_Sports">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Aerial
+        <input type="checkbox" name="type_aerial">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Specialty
+        <input type="checkbox" name="type_specialty">
+        <span class="checkmark"></span>
+        </label>
+        <label class="container2">Stock
+        <input type="checkbox" name="type_stock">
+        <span class="checkmark"></span>
+        </label>
+  </div>
+  </div>
+		<p>
+        <input type="text" placeholder="Enter Search Terms" name="search-terms" class="form-control nav-text ml-3"/>
+
+		<input type="submit" value="Search" class="ml-3 form-control btn-custom"/>
+        <p>
+        
+	    </form>
+</div>
 <table class="table mt-2">
     <tbody>
         {%for photo in all_photos %}

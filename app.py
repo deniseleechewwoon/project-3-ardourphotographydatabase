@@ -52,6 +52,38 @@ def show_all_photos():
     if search_type is not None and search_type is not False:
         criteria['type.name'] = "Fine Art Photography"
 
+    search_type = request.args.get('type_fashion')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Fashion Photography"
+
+    search_type = request.args.get('type_artitectural')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Artitectural Photography"
+
+    search_type = request.args.get('type_travel')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Travel Photography"
+
+    search_type = request.args.get('type_photojournalism')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Photojournalism"
+
+    search_type = request.args.get('type_lifestyle')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Lifestyle Photography"
+    
+    search_type = request.args.get('type_pet')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Pet Photography"
+
+    search_type = request.args.get('type_sports')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Sports Photography"
+
+    search_type = request.args.get('type_aerial')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Aerial Photography"
+
     all_photos = client[DB_NAME].photo.find(criteria)
     return render_template('show_photos.template.html', all_photos=all_photos)
 
