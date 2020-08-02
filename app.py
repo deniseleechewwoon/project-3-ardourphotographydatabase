@@ -84,6 +84,14 @@ def show_all_photos():
     if search_type is not None and search_type is not False:
         criteria['type.name'] = "Aerial Photography"
 
+    search_type = request.args.get('type_specialty')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Specialty Photography"
+
+    search_type = request.args.get('type_stock')
+    if search_type is not None and search_type is not False:
+        criteria['type.name'] = "Stock Photography"
+
     all_photos = client[DB_NAME].photo.find(criteria)
     return render_template('show_photos.template.html', all_photos=all_photos)
 
